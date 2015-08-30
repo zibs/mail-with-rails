@@ -81,5 +81,9 @@ test:
 production:
   <<: *default
   database: dayless_production
-  username: dayless
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: <%= ENV['DAYLESS_USER_PASSWORD']
   password: <%= ENV['DAYLESS_DATABASE_PASSWORD'] %>
