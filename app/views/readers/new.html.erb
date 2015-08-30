@@ -1,0 +1,15 @@
+
+<section class="signup row text-center">
+	<%= form_for(@reader) do |f| %>
+	<%= render 'shared/error_messages' %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control' %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email, class: 'form-control' %>
+
+	<%= f.submit "Send Me Poems", class: "btn btn-primary" %>
+    <% end %>
+
+</section>
