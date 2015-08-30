@@ -85,5 +85,5 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
-  username: <%= ENV['DAYLESS_USER_PASSWORD']
+  username: <%= ENV['DAYLESS_USER_PASSWORD'] %>
   password: <%= ENV['DAYLESS_DATABASE_PASSWORD'] %>
