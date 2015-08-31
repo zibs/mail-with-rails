@@ -23,6 +23,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   # host = '<your heroku app>.herokuapp.com'
+<<<<<<< HEAD
   #config.action_mailer.default_url_options = { host: host }
   #ActionMailer::Base.smtp_settings = {
    # :address        => 'smtp.sendgrid.net',
@@ -33,6 +34,18 @@ Rails.application.configure do
     # :domain         => '.com',
    # :enable_starttls_auto => true
  # }
+=======
+  # config.action_mailer.default_url_options = { host: host }
+  # ActionMailer::Base.smtp_settings = {
+    # :address        => 'smtp.sendgrid.net',
+    # :port           => '587',
+    # :authentication => :plain,
+    # :user_name      => ENV['SENDGRID_USERNAME'],
+    # :password       => ENV['SENDGRID_PASSWORD'],
+    # :domain         => '.com',
+    # :enable_starttls_auto => true
+  # }
+>>>>>>> 1f8292d0072ce11bd1dc1c86d671a9e886dae54f
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
