@@ -23,16 +23,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   # host = '<your heroku app>.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
+  #config.action_mailer.default_url_options = { host: host }
+  #ActionMailer::Base.smtp_settings = {
+   # :address        => 'smtp.sendgrid.net',
+    #:port           => '587',
+ #   :#authentication => :plain,
+  #  :user_name      => ENV['SENDGRID_USERNAME'],
+   # :password       => ENV['SENDGRID_PASSWORD'],
     # :domain         => '.com',
-    :enable_starttls_auto => true
-  }
+   # :enable_starttls_auto => true
+ # }
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -43,8 +43,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
-
+ config.assets.compile = true
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
