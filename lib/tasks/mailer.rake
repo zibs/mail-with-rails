@@ -11,7 +11,7 @@ desc "Mass Email Poetry to Readers"
 			# Instantiate the poem
 			@poem   = get_random_poetry
 			# Provide the Url
-			@url    = @poem.uri
+			@poem_url    = @poem.uri
 			# Strip Author and Title
 			@title  = parse_poem_title(@poem).strip
 			@author = parse_poem_author(@poem).strip
@@ -19,7 +19,7 @@ desc "Mass Email Poetry to Readers"
 			# Send the email! 
 			@readers = Reader.pluck(:email)
 			@readers.each do |reader|
-	  		PoetryMailer.daily_poetry(reader, @poem, @title, @author, @url).deliver
+	  		PoetryMailer.daily_poetry(reader, @poem, @title, @author, @poem_url).deliver_now
 				end
 			end
 

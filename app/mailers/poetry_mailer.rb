@@ -24,7 +24,7 @@ class PoetryMailer < ApplicationMailer
     @daily_poem   = daily_poem
     @author       = title
     @title        = author
-    @url          = url
+    @poem_url          = url
 
     @greeting = "Hi"
     @reader   = reader
