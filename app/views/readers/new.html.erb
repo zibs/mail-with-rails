@@ -1,15 +1,37 @@
+<section class="row">
 
-<section class="signup row text-center">
-	<%= form_for(@reader) do |f| %>
-	<%= render 'shared/error_messages' %>
+	<section class="header">
+		<section class="bad-poem col-md-8">
+	<h1>::Quotidian Poetry</h1>
+	<h1>Delivered Diurnally by</h1>
+	<h1>Circadian Circulation::</h1>
+	<br>
+	<h1>::Nuchthemerinal Nuance</h1>
+	<h1>Differing Daily::</h1>
+	
+	<br><br>
+	<h1>::Poetry, <em>per diem</em>::</h1>
+		</section>
+	</section>
 
-	<%= f.label :name %>
-	<%= f.text_field :name, class: 'form-control' %>
+	<section class="signup pull-down col-md-4">
 
-	<%= f.label :email %>
-	<%= f.text_field :email, class: 'form-control' %>
+		<%= form_for(@reader) do |f| %>
+		<%= render 'shared/error_messages' %>
 
-	<%= f.submit "Send Me Poems", class: "btn btn-primary" %>
-    <% end %>
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+		<br>	
+
+		<%= f.label :email %>
+		<%= f.text_field :email, class: 'form-control' %>
+
+		<%= f.submit "AEEIIAIAOOUUEUUUU", class: "btn enlist" %>
+	    <% end %>
+	</section>
 
 </section>
+
+<script>$('.pull-down').each(function() {
+    $(this).css('margin-top', $(this).parent().height()-$(this).height())
+})</script>

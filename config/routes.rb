@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 root 'readers#new'
+get 'milton'      =>   'readers#milton'
 resources :readers, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

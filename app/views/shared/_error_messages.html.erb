@@ -1,7 +1,7 @@
 <% if @reader.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      The form contains <%= pluralize(@reader.errors.count, "error") %>.
+     thy efforts result in <%= pluralize(@reader.errors.count, "error") %> ... yikes
     </div>
     <ul>
     <% @reader.errors.full_messages.each do |msg| %>

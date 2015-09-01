@@ -6,6 +6,8 @@ require 'nokogiri'
 desc "Mass Email Poetry to Readers"
 
 	task :diffuse => :environment do
+
+
 # This will run once a day. Therefore, will update poem daily.
 		def send_email
 			# Instantiate the poem
@@ -21,7 +23,13 @@ desc "Mass Email Poetry to Readers"
 			@readers.each do |reader|
 	  		PoetryMailer.daily_poetry(reader, @poem, @title, @author, @poem_url).deliver_now
 				end
-			end
+
+			# Update the archives!
+			PoemArchive.create(url:"#{@poem_url}", author: @author, title: @title)
+
+		end
+
+
 
   			private 
 
@@ -48,7 +56,11 @@ desc "Mass Email Poetry to Readers"
 		      def get_glossary_term
 		        # http://feeds.poetryfoundation.org/GlossaryTermOfTheDay
 		      end
+
+
 # CALL THE METHOD AND SEND THE EMAILS! SPREAD THE POEISIE!
 		send_email
 	end
+
+
 end

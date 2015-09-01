@@ -6,14 +6,15 @@ class ReadersController < ApplicationController
 	def create
 		@reader = Reader.new(reader_params)
 		 if @reader.save
-		 	flash[:success] = "You did it!"
+		 	flash[:success] = "Après aujourd'hui le déluge!"
 		 	redirect_to root_url
 		 else
-			flash[:warning] = "You didn't do it yet!"
-		 	redirect_to root_url
+		 	render :new
 		 end
 	end
 
+	def milton
+	end
 
 		private 
 		def reader_params
