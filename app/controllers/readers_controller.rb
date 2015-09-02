@@ -7,7 +7,7 @@ class ReadersController < ApplicationController
 		@reader = Reader.new(reader_params)
 		 if @reader.save
 		 	flash[:success] = "Après aujourd'hui le déluge!"
-		 	redirect_to root_url
+		 	redirect_to :milton
 		 else
 		 	render :new
 		 end
