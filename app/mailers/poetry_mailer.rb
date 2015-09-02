@@ -8,9 +8,8 @@ class PoetryMailer < ApplicationMailer
   #   en.poetry_mailer.welcome_email.subject
   #
   def welcome_email(reader)
-    @greeting = "Beginnings are poetic, ain't them"
     @reader   = reader 
-    mail to: reader.email, subject: "Poeticalnesses"
+    mail to: reader.email, subject: "poeticalnesses"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
