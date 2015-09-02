@@ -7,7 +7,7 @@ class ReadersController < ApplicationController
 		@reader = Reader.new(reader_params)
 		 if @reader.save
 		 	flash[:success] = "Après aujourd'hui le déluge!"
-		 	PoetryMailer.welcome_mailer(@reader).deliver_later
+		 	PoetryMailer.welcome_email(@reader).deliver_later
 		 	redirect_to :milton
 		 else
 		 	render :new
