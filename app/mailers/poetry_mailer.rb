@@ -21,9 +21,9 @@ class PoetryMailer < ApplicationMailer
   def daily_poetry(reader, daily_poem, title, author, url)
       
     @daily_poem   = daily_poem
-    @author       = title
-    @title        = author
-    @poem_url          = url
+    @author       = author
+    @title        = title
+    @poem_url     = url
 
     @greeting = "Hi"
     @reader   = reader
