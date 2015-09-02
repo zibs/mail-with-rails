@@ -7,7 +7,7 @@
 #
 # set :output, "../log/cron_log.log"
 #
-every 1.day :at => '1:15 pm' do
+every 1.day :at => '2:00 pm' do
 #   command "/usr/bin/some_great_command"
 #   runner "MyModel.some_method"
   	rake "diffuse:poetry"
