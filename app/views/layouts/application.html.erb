@@ -4,23 +4,21 @@
 <meta charset="utf-8">
 <title>Yoke</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Yoke is a poetry listerv diffusing poetry and poetics daily.">
+<meta name="description" content="Yoke is a poetry listerv for diffusing poetry and poetics daily.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <link href='https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
 <main class="container">
 <%= yield %>
 <% flash.each do |message_type, message | %>
     <%=content_tag(:a, message, class: "fade-out pull-right submit-btn alert alert-#{message_type}") %>
         <% end %> 
 </main>
-
-
 </body>
 </html>
