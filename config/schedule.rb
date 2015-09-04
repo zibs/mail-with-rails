@@ -5,14 +5,16 @@
 
 # Example:
 #
-# set :output, "../log/cron_log.log"
+set :output, "./log/cronlog.log"
 #
-every 1.day :at => '2:00 pm' do
+ every 1.hours do
 #   command "/usr/bin/some_great_command"
 #   runner "MyModel.some_method"
-  	rake "diffuse:poetry"
-end
-#
+  rake "poetry:diffuse"
+ end
+
+
+
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end

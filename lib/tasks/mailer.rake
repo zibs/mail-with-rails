@@ -3,7 +3,6 @@ namespace :poetry do
 require 'mechanize'
 require 'nokogiri'
 
-
 desc "Mass Email Poetry to Readers"
 
 	task :diffuse => :environment do
