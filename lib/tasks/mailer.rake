@@ -13,7 +13,7 @@ desc "Mass Email Poetry to Readers"
 			# Instantiate the poem
 			@poem          = get_random_poetry
 			# Provide the Url
-			@poem_url      = @poem.uri
+			@poem_url      = @poem.uri.to_s
 			# Strip Author and Title
 			@title         = parse_poem_title(@poem).strip
 			@author        = parse_poem_author(@poem).strip
