@@ -1,6 +1,10 @@
-Today's poem is <%= @title %> by <%= @author %>
+Hi <%= @reader %>,
 
-And is readable at <%= @poem_url %>! 
 
-Also, you can read about the poetic glossary term <%= @glossary_term %> at <%= @glossary_page %> if you feel like it.
+
+Today's poem is <%= link_to "#{@title}", @poem_url %> by <%= @author %>
+
+
+
+Also, you can read about <%= link_to "#{@glossary_term}", @glossary_page %> if you feel like it.
 
