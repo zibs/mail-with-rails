@@ -1,6 +1,6 @@
 class PoetryMailer < ApplicationMailer
 
-  default from: "poetxt@poetxt.ca"
+  default from: "AEIOU@poetxt.ca"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,7 +9,7 @@ class PoetryMailer < ApplicationMailer
   #
   def welcome_email(reader)
     @reader   = reader 
-    mail to: reader.email, subject: "poeticalnesses"
+    mail to: reader.email, subject: "Poematic"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
