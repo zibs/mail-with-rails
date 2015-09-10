@@ -18,16 +18,18 @@ class PoetryMailer < ApplicationMailer
   #   en.poetry_mailer.daily_poetry.subject
   #
 
-  def daily_poetry(reader, daily_poem, title, author, url)
+  def daily_poetry(reader, daily_poem, title, author, url, glossary_page, glossary_term)
       
-    @daily_poem   = daily_poem
-    @author       = author
-    @title        = title
-    @poem_url     = url
+    @daily_poem    = daily_poem
+    @author        = author
+    @title         = title
+    @poem_url      = url
+    @glossary_page = glossary_page
+    @glossary_term = glossary_term
 
     @greeting = "Hi"
     @reader   = reader
 
-    mail to: reader, subject: "Lines from a Poem"
+    mail to: reader, subject: "ApoEmawaItsyOU"
   end
 end

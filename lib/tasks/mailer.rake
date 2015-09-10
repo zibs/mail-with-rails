@@ -11,21 +11,24 @@ desc "Mass Email Poetry to Readers"
 # This will run once a day. Therefore, will update poem daily.
 		def send_email
 			# Instantiate the poem
-			@poem   = get_random_poetry
+			@poem          = get_random_poetry
 			# Provide the Url
-			@poem_url    = @poem.uri
+			@poem_url      = @poem.uri
 			# Strip Author and Title
-			@title  = parse_poem_title(@poem).strip
-			@author = parse_poem_author(@poem).strip
+			@title         = parse_poem_title(@poem).strip
+			@author        = parse_poem_author(@poem).strip
+			@glossary_page = get_glossary_page
+			@glossary_term = get_glossary_term(@glossary_page)
+
 			
 			# Send the email! 
 			@readers = Reader.pluck(:email)
 			@readers.each do |reader|
-	  		PoetryMailer.daily_poetry(reader, @poem, @title, @author, @poem_url).deliver_now
+	  		PoetryMailer.daily_poetry(reader, @poem, @title, @author, @poem_url, @glossary_page, @glossary_term).deliver_now
 				end
 
 			# Update the archives!
-			PoemArchive.create(url:"#{@poem_url}", author: @author, title: @title)
+			PoemArchive.create(url:"#{@poem_url}", author: @author, title: @title, glossary_url: "#{@glossary_page}", glossary_term: @glossary_term)
 
 		end
 
@@ -52,10 +55,21 @@ desc "Mass Email Poetry to Readers"
 		      def parse_poem_title(poetrypage)
 		       poetrypage.parser.at_xpath('//*[@id="poem-top"]/h1').text.squeeze(" ")
 		      end
+
+		      # GET GLOSSARY
 		      
-		      def get_glossary_term
-		        # http://feeds.poetryfoundation.org/GlossaryTermOfTheDay
+		      def get_glossary_page
+		      	browser = Mechanize.new { |agent| agent.user_agent_alias = 'Mac Safari' }
+		        glossary_page = browser.get('http://feeds.poetryfoundation.org/GlossaryTermOfTheDay')
+		        @glossary_term_page = glossary_page.search("link")[1].children.inner_text
 		      end
+
+		      def get_glossary_term(glossary_page)
+		      	browser = Mechanize.new { |agent| agent.user_agent_alias = 'Mac Safari' }
+		      	glossary_page  = browser.get(glossary_page)
+		      	@glossary_term = glossary_page.parser.at_xpath('//*[@id="lab"]/div[5]/h1').text
+		      end
+
 
 
 # CALL THE METHOD AND SEND THE EMAILS! SPREAD THE POEISIE!

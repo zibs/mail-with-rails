@@ -1,8 +1,11 @@
-<p> Today's poem is <span class="poem-title"> <%= @title %> </span> 
+<h4> Today's poem is <span class="poem-title"> <%= @title %> </span> 
  				by <span class="poem-author"><%= @author %></span> 
-</p>
-<p>
-And is readable at <%= @poem_url %>! 
-</p>
+</h4>
 
-<p>love, </p>
+<h3>
+And is readable at <%= @poem_url %>! 
+</h3>
+
+<h5>Also, you can read about <%= link_to "#{@glossary_term}", @glossary_page %> if you feel like it.</h5>
+
+

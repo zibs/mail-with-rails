@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901003731) do
+ActiveRecord::Schema.define(version: 20150910193720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "poem_archives", force: :cascade do |t|
     t.text     "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "title"
     t.string   "author"
+    t.text     "glossary_page"
+    t.string   "glossary_term"
   end
 
   create_table "readers", force: :cascade do |t|
