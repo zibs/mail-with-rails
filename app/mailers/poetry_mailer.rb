@@ -8,7 +8,7 @@ class PoetryMailer < ApplicationMailer
   #   en.poetry_mailer.welcome_email.subject
   #
   def welcome_email(reader)
-    @reader   = reader 
+    @reader   = reader.name 
     mail to: reader.email, subject: "Poematic"
   end
 
@@ -28,8 +28,8 @@ class PoetryMailer < ApplicationMailer
     @glossary_term = glossary_term
 
     @greeting = "Hi"
-    @reader   = reader
+    @reader   = reader.name
 
-    mail to: reader, subject: "ApoEmawaItsyOU"
+    mail to: reader.email, subject: "ApoEmawaItsyOU"
   end
 end

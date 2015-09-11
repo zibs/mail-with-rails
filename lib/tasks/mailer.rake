@@ -22,10 +22,10 @@ desc "Mass Email Poetry to Readers"
 
 			
 			# Send the email! 
-			@readers = Reader.pluck(:email)
+			@readers = Reader.order("created_at DESC")
 			@readers.each do |reader|
-	  		PoetryMailer.daily_poetry(reader, @poem, @title, @author, @poem_url, @glossary_page, @glossary_term).deliver_now
-				end
+				PoetryMailer.daily_poetry(reader, @poem, @title, @author, @poem_url, @glossary_page, @glossary_term).deliver_later
+			end
 
 			# Update the archives!
 			PoemArchive.create(url:"#{@poem_url}", author: @author, title: @title, glossary_url: "#{@glossary_page}", glossary_term: @glossary_term)
