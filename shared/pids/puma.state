@@ -1,5 +1,5 @@
 ---
-pid: 14895
+pid: 8961
 config: !ruby/object:Puma::Configuration
   cli_options: 
   conf: 
@@ -22,9 +22,9 @@ config: !ruby/object:Puma::Configuration
     :redirect_append: true
     :pidfile: "/home/raworth/yoke/shared/pids/puma.pid"
     :state: "/home/raworth/yoke/shared/pids/puma.state"
-    :control_url: unix:///tmp/puma-status-1441046661191-14895
+    :control_url: unix:///tmp/puma-status-1442687873097-8961
     :worker_directory: "/home/raworth/yoke"
     :config_file: config/puma.rb
-    :control_url_temp: "/tmp/puma-status-1441046661191-14895"
-    :control_auth_token: 9ed0184d483c8384f61b54cc0d420e8
+    :control_url_temp: "/tmp/puma-status-1442687873097-8961"
+    :control_auth_token: 4fcd676783d11076f2c130b28ea55c
     :tag: yoke
