@@ -1,17 +1,17 @@
 ---
-pid: 8961
+pid: 13038
 config: !ruby/object:Puma::Configuration
   cli_options: 
   conf: 
   options:
     :min_threads: 1
     :max_threads: 6
-    :quiet: false
+    :quiet: true
     :debug: false
     :binds:
     - unix:///home/raworth/yoke/shared/sockets/puma.sock
     :workers: 1
-    :daemon: false
+    :daemon: true
     :mode: :http
     :before_fork: []
     :worker_timeout: 60
@@ -22,9 +22,9 @@ config: !ruby/object:Puma::Configuration
     :redirect_append: true
     :pidfile: "/home/raworth/yoke/shared/pids/puma.pid"
     :state: "/home/raworth/yoke/shared/pids/puma.state"
-    :control_url: unix:///tmp/puma-status-1442687873097-8961
+    :control_url: unix:///tmp/puma-status-1442954609975-13033
     :worker_directory: "/home/raworth/yoke"
     :config_file: config/puma.rb
-    :control_url_temp: "/tmp/puma-status-1442687873097-8961"
-    :control_auth_token: 4fcd676783d11076f2c130b28ea55c
+    :control_url_temp: "/tmp/puma-status-1442954609975-13033"
+    :control_auth_token: 3152891ae3559399514bce407d103f96
     :tag: yoke

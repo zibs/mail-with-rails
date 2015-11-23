@@ -107,3 +107,6 @@
 [8961] - Gracefully shutting down workers...
 [8961] === puma shutdown: 2015-09-19 11:38:13 -0700 ===
 [8961] - Goodbye!
+=== puma startup: 2015-09-22 13:43:29 -0700 ===
+[13038] * Starting control server on unix:///tmp/puma-status-1442954609975-13033
+[13038] - Worker 0 (pid: 13045) booted, phase: 0
