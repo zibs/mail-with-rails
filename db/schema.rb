@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150910193720) do
     t.datetime "updated_at",    null: false
     t.string   "title"
     t.string   "author"
-    t.text     "glossary_page"
+    t.text     "glossary_url"
     t.string   "glossary_term"
   end
 

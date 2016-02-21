@@ -8,7 +8,7 @@ class PoetryMailer < ApplicationMailer
   #   en.poetry_mailer.welcome_email.subject
   #
   def welcome_email(reader)
-    @reader   = reader.name 
+    @reader   = reader.name
     mail to: reader.email, subject: "Poematic"
   end
 
@@ -19,7 +19,7 @@ class PoetryMailer < ApplicationMailer
   #
 
   def daily_poetry(reader, daily_poem, title, author, url, glossary_page, glossary_term)
-      
+
     @daily_poem    = daily_poem
     @author        = author
     @title         = title
@@ -27,9 +27,9 @@ class PoetryMailer < ApplicationMailer
     @glossary_page = glossary_page
     @glossary_term = glossary_term
 
-    @greeting = "Hi"
+    @greeting = ["Hullo", "Salut", "Greetings", "G'Mawrning!", "Jolly-Daydums to you, ", "Ahoy!", "Enjoy this most sweet and blessed day before you, ", "Another day, another dollar, ", "Another day, another poem", "Spring's nearly here, ", " :) "].sample
+    @emoji = ["🌞", "🍀", "🌺", "🍇", "🍉", "🍟", "🍼"].sample
     @reader   = reader.name
-
     mail to: reader.email, subject: "#{@title}"
   end
 end
