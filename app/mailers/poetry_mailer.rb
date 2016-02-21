@@ -28,7 +28,7 @@ class PoetryMailer < ApplicationMailer
     @glossary_term = glossary_term
 
     @greeting = ["Hullo", "Salut", "Greetings", "G'Mawrning!", "Jolly-Daydums to you, ", "Ahoy!", "Enjoy this most sweet and blessed day before you, ", "Another day, another dollar, ", "Another day, another poem", "Spring's nearly here, ", " :) "].sample
-    @emoji = ["🌞", "🍀", "🌺", "🍇", "🍉", "🍟", "🍼"].sample
+    @emoji = ["🌞", "🍀", "🌺", "🍇", "🍉", "🍟", "🍼"].sample(2).join(" ")
     @reader   = reader.name
     mail to: reader.email, subject: "#{@title}"
   end
